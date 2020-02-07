@@ -4,7 +4,6 @@
       
         ## General idea
         
-        
             The idea is the when we are typing in the search box of the Amazon, the more we type for the sub-prefixes,
             the more the word become apparent in the search results. For the words, that are very demanding or hot, 
             as soon as we type the first letter, we may be able to see the keyword inside the search results which suppress
@@ -43,17 +42,20 @@
               
             The algorithm in pseudo-code:  
                 
-                ```bash  
+                ```bash
+                  
                 score=0;  
                 Foreach subprefix of originalQuery:  
-                 results = apicall(subprefix); 
-                 if(results.contains(originalQuery))
-                    score += calculateIterationWeigth(results)  
-                 else  
-                    break;  
-                 
-                  if(timeOut())  
-                    break;    
+                    
+                    results = apicall(subprefix); 
+                    
+                    if(results.contains(originalQuery))
+                        score += calculateIterationWeigth(results)  
+                    else  
+                        break;  
+
+                    if(timeOut())  
+                        break;    
                     
                 return score/originalQuery.length  
                 ```  
