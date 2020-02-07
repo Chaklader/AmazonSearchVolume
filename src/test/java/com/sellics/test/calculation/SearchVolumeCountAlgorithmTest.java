@@ -1,4 +1,4 @@
-package com.sellics.amazon.calculation;
+package com.sellics.test.calculation;
 /*
  * @author aleksandartrposki@gmail.com
  * @since 14.07.19

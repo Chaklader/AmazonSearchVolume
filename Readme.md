@@ -21,9 +21,9 @@ This produces a .jar file and a docker image.
 ```properties  
   
  server.port=8080 
- com.sellics.amazon.controller.runningtime_in_nanoseconds=9000000000 
- com.sellics.amazon.controller.default_mkt=1 
- com.sellics.amazon.controller.default_department=aps
+ com.sellics.test.controller.runningtime_in_nanoseconds=9000000000 
+ com.sellics.test.controller.default_mkt=1 
+ com.sellics.test.controller.default_department=aps
    
 ```   
   

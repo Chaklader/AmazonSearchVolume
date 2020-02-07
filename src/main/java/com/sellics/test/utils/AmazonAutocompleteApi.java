@@ -1,4 +1,4 @@
-package com.sellics.amazon.utils;
+package com.sellics.test.utils;
 /*
  * @author aleksandartrposki@gmail.com
  * @since 14.07.19
@@ -8,7 +8,7 @@ package com.sellics.amazon.utils;
  */
 
 /**
- * An interface for accesing amazon's autocomplete api.
+ * An interface for accesing test's autocomplete api.
  * Example request
  * http://completion.amazon.com/search/complete?search-alias=aps&mkt=1&q=apple%20watch
  */

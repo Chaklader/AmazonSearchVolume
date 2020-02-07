@@ -1,4 +1,4 @@
-package com.sellics.amazon.models;
+package com.sellics.test.models;
 /*
  * @author aleksandartrposki@gmail.com
  * @since 14.07.19

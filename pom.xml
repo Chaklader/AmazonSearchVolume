@@ -85,6 +85,9 @@
                                 <resource>
                                     <directory>src/main/docker</directory>
                                     <filtering>true</filtering>
+                                    <includes>
+                                        <include>**/*.properties</include>
+                                    </includes>
                                 </resource>
                             </resources>
                         </configuration>

@@ -1,4 +1,4 @@
-package com.sellics.amazon.calculation;
+package com.sellics.test.calculation;
 
 
 import lombok.Builder;

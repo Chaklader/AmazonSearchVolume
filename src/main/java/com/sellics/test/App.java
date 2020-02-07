@@ -1,4 +1,4 @@
-package com.sellics.amazon;
+package com.sellics.test;
 
 /*
  * @author aleksandartrposki@gmail.com
@@ -8,12 +8,12 @@ package com.sellics.amazon;
  */
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.sellics.amazon.utils.AmazonAutocompleteApi;
-import com.sellics.amazon.utils.RestTemplateAutocompleteApi;
-import com.sellics.amazon.calculation.AlgorithmSettings;
-import com.sellics.amazon.calculation.SearchVolumeIterator;
-import com.sellics.amazon.calculation.SearchVolumeCountAlgorithm;
-import com.sellics.amazon.utils.Time;
+import com.sellics.test.utils.AmazonAutocompleteApi;
+import com.sellics.test.utils.RestTemplateAutocompleteApi;
+import com.sellics.test.calculation.AlgorithmSettings;
+import com.sellics.test.calculation.SearchVolumeIterator;
+import com.sellics.test.calculation.SearchVolumeCountAlgorithm;
+import com.sellics.test.utils.Time;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
@@ -25,6 +25,9 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.function.BiFunction;
 
+/**
+ * @author Chaklader on 2020-02-07
+ */
 @SpringBootApplication
 @Configuration
 //@EnableAutoConfiguration

@@ -1,4 +1,4 @@
-package com.sellics.amazon.utils;
+package com.sellics.test.utils;
 /*
  * @author aleksandartrposki@gmail.com
  * @since 14.07.19
