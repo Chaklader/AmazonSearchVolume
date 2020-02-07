@@ -2,6 +2,7 @@
     # Amazon Search Volume Calculation   
     
       
+      
         ## General idea
         
             The idea is the when we are typing in the search box of the Amazon, the more we type for the sub-prefixes,
@@ -31,7 +32,7 @@
             We can see that until we type the word `ipho`, we are able to see the full search term in the Amazon search box.  
           
           
-        ## b) The algorithm
+        ## Algorithm
           
             As discussed above, a search term hotness would be measured by how many of that search terms prefixes still result in the search term as an autocomplete suggestion.  
             A couple minor details:  
@@ -60,22 +61,42 @@
                     
                 return score/originalQuery.length  
                 ```  
-    
-       
-        ## Building the project  
-                  
-                The project can be built by running:
-                  
-                    $ mvn clean install dockerfile:build 
-                   
-                This produces a .jar file and a docker image.  
+     
+        ## Assumptions
+            
+            a. The score of 100 means that even if we just type the first letter of the keyword, the keyword 
+            will be appear in the search box.
+            b. Words have uniform frequency across prefixes. There are equal number of words starting with each letter of the English alphabet.
+            c. Amazon does not personalize the requests. Searching multiple times for similar terms from the same machine will not bias future search results
+            d. Capitalization does not matter.   
+            e. All results return by amazon api have an exact prefix match with the search term.
+            f. The majority of the round trip time is going to be spend on waiting for the amazon api. Serialization/Deserialization cost and the actual algorithm are very short
+            g. Amazon will always return an empty array instead of a null result.                      
+            
+            
+        ## precision 
               
-                ## Running the project  
-                  
-                  If building of the project completed successfully, the project can be run either from the .jar directly:  
-                   
+            The outcome should be really precise for the extremes. Short and really cold words, should be precisely 
+            detected as well as long and hot words. 
+            
+            However, The algorithm is not precise across prefixes. There is not a good way to compare words with different 
+            first letters with this approach and the "hotness" might be heavily biased to certain letters.            
+            
+                        
+        ## Building the project  
+                          
+            The project can be built by running:
+                
+                $ mvn clean install dockerfile:build 
+               
+            This produces a .jar file and a docker image.  
+          
+          
+        ## Running the project  
+          
+                If building of the project completed successfully, the project can be run either from the .jar directly:  
+               
                     $ java -jar target/amazonSearchVolume-1.0-SNAPSHOT.jar  
-                 
-                  or via docker:
-                   
-                    $ docker run -it -p 8080:8080  
+                
+                or via docker:                
+                    $ docker run -it -p 8080:8080    

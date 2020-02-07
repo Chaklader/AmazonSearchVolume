@@ -3,7 +3,6 @@ package com.sellics.challenge.calculation;
 
 import lombok.Getter;
 import lombok.ToString;
-
 import java.util.Set;
 
 import static org.apache.commons.lang3.StringUtils.removeEnd;
@@ -31,7 +30,7 @@ public class SearchVolumeCountAlgorithm implements SearchVolumeIterator {
     private String trimmedKeyword;
 
     private float score = 0;
-    private int count = 0;
+    private int count;
 
     public SearchVolumeCountAlgorithm(Settings settings, String keyword) {
 

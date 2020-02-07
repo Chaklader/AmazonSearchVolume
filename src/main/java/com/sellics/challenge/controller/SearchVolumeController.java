@@ -54,5 +54,4 @@ public class SearchVolumeController {
 
         return status(status).body(searchVolume);
     }
-
 }
