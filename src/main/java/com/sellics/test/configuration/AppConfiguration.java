@@ -5,11 +5,13 @@ import com.sellics.test.calculation.Settings;
 import com.sellics.test.calculation.SearchVolumeCountAlgorithm;
 import com.sellics.test.calculation.SearchVolumeIterator;
 import com.sellics.test.models.Time;
+
 import com.sellics.test.utils.AutocompleteResultsInterface;
 import com.sellics.test.utils.RestAutocompleteApi;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
+
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestOperations;
 import org.springframework.web.client.RestTemplate;

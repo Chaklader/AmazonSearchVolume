@@ -9,8 +9,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.function.BiFunction;
-
 import static java.util.Arrays.asList;
+
 
 /**
  * @author Chaklader on 2020-02-07

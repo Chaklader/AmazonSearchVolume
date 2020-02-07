@@ -21,6 +21,7 @@ import java.util.function.Function;
 public class Settings {
 
     private Function<String, Set<String>> matchFinder;
+
     private int maxResultSetSize;
     private List<String> suffixStopWords;
 

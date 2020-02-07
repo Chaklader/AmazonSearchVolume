@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.ToString;
 
 import java.util.Set;
+
 import static org.apache.commons.lang3.StringUtils.removeEnd;
 
 
@@ -13,6 +14,7 @@ import static org.apache.commons.lang3.StringUtils.removeEnd;
  * search term, will result in autocompletion containing the search term
  * itself.
  * */
+
 /**
  * @author Chaklader on 2020-02-07
  */
@@ -26,20 +28,20 @@ public class SearchVolumeCountAlgorithm implements SearchVolumeIterator {
 
     private String subPrefix;
     private String keyword;
-    private String trimedKeyword;
+    private String trimmedKeyword;
 
     private float score = 0;
-    private int totalIterations = 0;
+    private int count = 0;
 
     public SearchVolumeCountAlgorithm(Settings settings, String keyword) {
 
         this.keyword = keyword;
         this.settings = settings;
 
-        this.trimedKeyword = removeAllStopSufixes(keyword.toLowerCase());
+        this.trimmedKeyword = removeAllStopSufixes(keyword.toLowerCase());
 
-        totalIterations = calculateTotalIterations(trimedKeyword);
-        subPrefix = trimedKeyword;
+        count = calculateTotalIterations(trimmedKeyword);
+        subPrefix = trimmedKeyword;
     }
 
     @Override
@@ -50,11 +52,11 @@ public class SearchVolumeCountAlgorithm implements SearchVolumeIterator {
     @Override
     public Integer next() {
 
-        Set<String> mathes = settings.findMatches(subPrefix);
+        Set<String> matches = settings.findMatches(subPrefix);
 
-        if (mathes.contains(trimedKeyword)) {
+        if (matches.contains(trimmedKeyword)) {
 
-            score += getMatchesWeight(mathes);
+            score += getMatchesWeight(matches);
 
             subPrefix = subPrefix.substring(0, subPrefix.length() - 1);
             subPrefix = removeAllStopSufixes(subPrefix);
@@ -62,7 +64,7 @@ public class SearchVolumeCountAlgorithm implements SearchVolumeIterator {
             subPrefix = "";
         }
 
-        return (int) ((score * PERCENT) / totalIterations);
+        return (int) ((score * PERCENT) / count);
     }
 
     public float getMatchesWeight(Set<String> mathes) {
@@ -71,23 +73,23 @@ public class SearchVolumeCountAlgorithm implements SearchVolumeIterator {
 
     public int calculateTotalIterations(String input) {
 
-        int count = 0;
+        int total = 0;
         input = removeAllStopSufixes(input);
 
         while (input.length() > 0) {
 
-            count++;
+            total++;
 
             input = input.substring(0, input.length() - 1);
             input = removeAllStopSufixes(input);
         }
 
-        return count;
+        return total;
     }
 
     public String removeAllStopSufixes(String input) {
 
-        String res = input;
+        String result = input;
         boolean hasChanged;
 
         do {
@@ -96,14 +98,14 @@ public class SearchVolumeCountAlgorithm implements SearchVolumeIterator {
 
             for (String stopSufix : settings.getSuffixStopWords()) {
 
-                if (res.endsWith(stopSufix)) {
-                    res = removeEnd(res, stopSufix);
+                if (result.endsWith(stopSufix)) {
+                    result = removeEnd(result, stopSufix);
                     hasChanged = true;
                 }
             }
         }
 
         while (hasChanged);
-        return res;
+        return result;
     }
 }

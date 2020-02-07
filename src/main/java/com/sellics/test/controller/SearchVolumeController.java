@@ -32,9 +32,9 @@ public class SearchVolumeController {
     }
 
     /**
-     * @param keyword    A required parameter that is going to be used as the search term
-     * @param market     optional parameter to select the marketplace by code. If empty it is going to default to the value set
-     * @param department optional parameter to filter by department. Defaults to the value set
+     * @param keyword    A required parameter that is going to be used as the search term.
+     * @param market     optional parameter to select the marketplace by code. If empty it is going to default to the value set.
+     * @param department optional parameter to filter by department. Defaults to the value set.
      *                   <p>
      *                   This endpoint will run a iterative calculation in the time available. If the time runs out it will
      *                   return a score but the status code will be 504. If the calculation finishes in time, the status will
@@ -42,9 +42,9 @@ public class SearchVolumeController {
      * @return SearchVolume consisting of the score, and the search term
      */
     @RequestMapping(path = "/search", method = GET, produces = APPLICATION_JSON_VALUE)
-    public ResponseEntity<SearchVolume> estimate(@RequestParam(value = "keyword") String keyword,
-                                                 @RequestParam(value = "market", required = false, defaultValue = "1") String market,
-                                                 @RequestParam(value = "department", required = false, defaultValue = "aps") String department) {
+    public ResponseEntity<SearchVolume> calculate(@RequestParam(value = "keyword") String keyword,
+                                                  @RequestParam(value = "market", required = false, defaultValue = "1") String market,
+                                                  @RequestParam(value = "department", required = false, defaultValue = "aps") String department) {
 
         SearchVolumeIterator searchAlgorithm = service.create(keyword, market, department);
         int score = service.runSearchVolumeIterator(searchAlgorithm);
