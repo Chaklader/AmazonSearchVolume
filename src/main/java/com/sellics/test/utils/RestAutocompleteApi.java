@@ -26,7 +26,6 @@ public class RestAutocompleteApi implements AutocompleteResultsInterface {
     private String amazonUrl;
     private ObjectMapper mapper;
 
-
     public RestAutocompleteApi(RestOperations restOperations, String amazonUrl, ObjectMapper mapper) {
 
         this.restOperations = restOperations;
