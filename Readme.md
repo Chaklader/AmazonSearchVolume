@@ -94,9 +94,9 @@
           
         ## Running the project  
           
-                If building of the project completed successfully, the project can be run either from the .jar directly:  
-               
-                    $ java -jar target/amazonSearchVolume-1.0-SNAPSHOT.jar  
-                
-                or via docker:                
-                    $ docker run -it -p 8080:8080    
+            If building of the project completed successfully, the project can be run either from the .jar directly:  
+           
+                $ java -jar target/amazonSearchVolume-1.0-SNAPSHOT.jar  
+            
+            or via docker:                
+                $ docker run -it -p 8080:8080    
