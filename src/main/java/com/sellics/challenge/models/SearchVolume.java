@@ -1,4 +1,4 @@
-package com.sellics.test.models;
+package com.sellics.challenge.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;

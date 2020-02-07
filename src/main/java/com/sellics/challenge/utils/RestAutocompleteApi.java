@@ -1,4 +1,4 @@
-package com.sellics.test.utils;
+package com.sellics.challenge.utils;
 
 
 import com.fasterxml.jackson.databind.JsonNode;

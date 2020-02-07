@@ -1,9 +1,9 @@
-package com.sellics.test.controller;
+package com.sellics.challenge.controller;
 
 
-import com.sellics.test.services.SearchVolumeService;
-import com.sellics.test.calculation.SearchVolumeIterator;
-import com.sellics.test.models.SearchVolume;
+import com.sellics.challenge.services.SearchVolumeService;
+import com.sellics.challenge.calculation.SearchVolumeIterator;
+import com.sellics.challenge.models.SearchVolume;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -41,7 +41,7 @@ public class SearchVolumeController {
      *                   be 200.
      * @return SearchVolume consisting of the score, and the search term
      */
-    @RequestMapping(path = "/search", method = GET, produces = APPLICATION_JSON_VALUE)
+    @RequestMapping(path = "/estimate", method = GET, produces = APPLICATION_JSON_VALUE)
     public ResponseEntity<SearchVolume> calculate(@RequestParam(value = "keyword") String keyword,
                                                   @RequestParam(value = "market", required = false, defaultValue = "1") String market,
                                                   @RequestParam(value = "department", required = false, defaultValue = "aps") String department) {

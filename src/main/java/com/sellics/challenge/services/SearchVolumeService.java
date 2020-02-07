@@ -1,9 +1,9 @@
-package com.sellics.test.services;
+package com.sellics.challenge.services;
 
-import com.sellics.test.calculation.Settings;
-import com.sellics.test.calculation.SearchVolumeIterator;
-import com.sellics.test.utils.AutocompleteResultsInterface;
-import com.sellics.test.models.Time;
+import com.sellics.challenge.calculation.Settings;
+import com.sellics.challenge.calculation.SearchVolumeIterator;
+import com.sellics.challenge.utils.AutocompleteResultsInterface;
+import com.sellics.challenge.models.Time;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;

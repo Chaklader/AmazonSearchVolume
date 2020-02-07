@@ -1,4 +1,4 @@
-package com.sellics.test;
+package com.sellics.challenge;
 
 
 import org.springframework.boot.SpringApplication;

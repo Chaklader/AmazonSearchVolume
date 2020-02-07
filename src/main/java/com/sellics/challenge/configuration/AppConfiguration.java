@@ -1,13 +1,13 @@
-package com.sellics.test.configuration;
+package com.sellics.challenge.configuration;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.sellics.test.calculation.Settings;
-import com.sellics.test.calculation.SearchVolumeCountAlgorithm;
-import com.sellics.test.calculation.SearchVolumeIterator;
-import com.sellics.test.models.Time;
+import com.sellics.challenge.calculation.Settings;
+import com.sellics.challenge.calculation.SearchVolumeCountAlgorithm;
+import com.sellics.challenge.calculation.SearchVolumeIterator;
+import com.sellics.challenge.models.Time;
 
-import com.sellics.test.utils.AutocompleteResultsInterface;
-import com.sellics.test.utils.RestAutocompleteApi;
+import com.sellics.challenge.utils.AutocompleteResultsInterface;
+import com.sellics.challenge.utils.RestAutocompleteApi;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;

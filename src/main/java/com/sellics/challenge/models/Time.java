@@ -1,4 +1,4 @@
-package com.sellics.test.models;
+package com.sellics.challenge.models;
 
 /**
  * @author Chaklader on 2020-02-07

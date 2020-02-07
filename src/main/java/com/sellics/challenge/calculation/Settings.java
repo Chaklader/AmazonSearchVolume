@@ -1,4 +1,4 @@
-package com.sellics.test.calculation;
+package com.sellics.challenge.calculation;
 
 
 import lombok.Builder;

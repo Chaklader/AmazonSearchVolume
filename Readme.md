@@ -14,16 +14,17 @@
             
         
                 ```bash  
-                 iphone cahrger -> hit  
-                 iphone cahrge  -> hit  
-                 iphone cahrg   -> hit  
-                 iphone cahr    -> hit   
-                 iphone cah     -> hit  
-                 iphone ca      -> hit  
-                 iphone c       -> hit  
-                 iphone         -> hit  
-                 iphon          -> hit  
-                 ipho           -> miss  
+                     
+                     iphone cahrger -> hit  
+                     iphone cahrge  -> hit  
+                     iphone cahrg   -> hit  
+                     iphone cahr    -> hit   
+                     iphone cah     -> hit  
+                     iphone ca      -> hit  
+                     iphone c       -> hit  
+                     iphone         -> hit  
+                     iphon          -> hit  
+                     ipho           -> miss  
                     
                 ```  
         

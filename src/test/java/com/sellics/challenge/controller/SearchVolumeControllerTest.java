@@ -1,14 +1,14 @@
-package com.sellics.test.controller;
+package com.sellics.challenge.controller;
 
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.sellics.test.models.SearchVolume;
-import com.sellics.test.models.Time;
-import com.sellics.test.services.SearchVolumeService;
-import com.sellics.test.utils.AutocompleteResultsInterface;
-import com.sellics.test.utils.AutocompleteResults;
-import com.sellics.test.calculation.SearchVolumeIterator;
+import com.sellics.challenge.models.SearchVolume;
+import com.sellics.challenge.models.Time;
+import com.sellics.challenge.services.SearchVolumeService;
+import com.sellics.challenge.utils.AutocompleteResultsInterface;
+import com.sellics.challenge.utils.AutocompleteResults;
+import com.sellics.challenge.calculation.SearchVolumeIterator;
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.http.HttpStatus;
