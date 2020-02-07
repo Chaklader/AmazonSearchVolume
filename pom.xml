@@ -2,6 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>sellics</groupId>
@@ -92,6 +93,7 @@
                             </resources>
                         </configuration>
                     </execution>
+
                     <execution>
                         <id>copy-article-master</id>
                         <phase>validate</phase>
@@ -156,9 +158,7 @@
                     <instrumentation>
                     </instrumentation>
                     <check>
-                        <!-- <branchRate>85</branchRate> <lineRate>85</lineRate>
-                            <haltOnFailure>true</haltOnFailure> <totalBranchRate>85</totalBranchRate>
-                            <totalLineRate>85</totalLineRate> <packageLineRate>85</packageLineRate> <packageBranchRate>85</packageBranchRate> -->
+
                     </check>
                     <aggregate>true</aggregate>
                 </configuration>

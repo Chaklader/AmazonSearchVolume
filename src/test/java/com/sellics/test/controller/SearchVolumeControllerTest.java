@@ -25,6 +25,7 @@ import static java.util.Arrays.asList;
  */
 public class SearchVolumeControllerTest {
 
+
     public static final String arbitraryStopWords = " ";
     public static final int MAX_MATCHES_PER_API_RESPONSE = 10;
     public static final String ARBITRARY_KEYWORD = "arbitraryKeyword";
