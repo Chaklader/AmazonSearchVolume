@@ -18,7 +18,7 @@ import java.util.function.Function;
 @Wither
 @Getter
 @Builder
-public class AlgorithmSettings {
+public class Settings {
 
     private Function<String, Set<String>> matchFinder;
     private int maxResultSetSize;

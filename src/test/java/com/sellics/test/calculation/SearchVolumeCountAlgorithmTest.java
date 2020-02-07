@@ -18,7 +18,7 @@ import static java.util.stream.Collectors.toSet;
 public class SearchVolumeCountAlgorithmTest {
     @Test
     public void getMaximumItterationCount_takesConsecutiveStopWOrdsIntoAccount() {
-        AlgorithmSettings settings = AlgorithmSettings.builder()
+        Settings settings = Settings.builder()
                 .suffixStopWords(asList("1", "2", "3"))
                 .build();
         String keyword = "1abc121abc3a3abc1";
@@ -29,7 +29,7 @@ public class SearchVolumeCountAlgorithmTest {
 
     @Test
     public void getMaximumItterationCount_returnsZeroForEmptyString() {
-        AlgorithmSettings settings = AlgorithmSettings.builder()
+        Settings settings = Settings.builder()
                 .suffixStopWords(asList("1", "2", "3"))
                 .build();
         String keyword = "";
@@ -40,7 +40,7 @@ public class SearchVolumeCountAlgorithmTest {
 
     @Test
     public void getMaximumItterationCount_returnsStrLengthForSufixless() {
-        AlgorithmSettings settings = AlgorithmSettings.builder()
+        Settings settings = Settings.builder()
                 .suffixStopWords(asList("1", "2", "3"))
                 .build();
         String keyword = "abcde";
@@ -51,7 +51,7 @@ public class SearchVolumeCountAlgorithmTest {
 
     @Test
     public void getMaximumItterationCount_returnsStrLengthForEmptySufixArray() {
-        AlgorithmSettings settings = AlgorithmSettings.builder()
+        Settings settings = Settings.builder()
                 .suffixStopWords(new ArrayList<>())
                 .build();
         String keyword = "abcde";
@@ -62,7 +62,7 @@ public class SearchVolumeCountAlgorithmTest {
 
     @Test
     public void getMaximumItterationCount_ReturnsZeroForStopWOrdsOnlyKeyword() {
-        AlgorithmSettings settings = AlgorithmSettings.builder()
+        Settings settings = Settings.builder()
                 .suffixStopWords(asList("1", "2", "3"))
                 .build();
         String keyword = "11231";
@@ -73,7 +73,7 @@ public class SearchVolumeCountAlgorithmTest {
 
     @Test
     public void removeAllSufixes_ReturnsCorrectWordForDuplicateStopSuffixesInMixedOrder() {
-        AlgorithmSettings settings = AlgorithmSettings.builder()
+        Settings settings = Settings.builder()
                 .suffixStopWords(asList("1", "2", "3"))
                 .build();
         String keyword = "1abc121";
@@ -85,7 +85,7 @@ public class SearchVolumeCountAlgorithmTest {
 
     @Test
     public void removeAllSufixes_DoesntChange_sufixlessWord() {
-        AlgorithmSettings settings = AlgorithmSettings.builder()
+        Settings settings = Settings.builder()
                 .suffixStopWords(asList("1", "2", "3"))
                 .build();
         String keyword = "1abc";
@@ -97,7 +97,7 @@ public class SearchVolumeCountAlgorithmTest {
 
     @Test
     public void removeAllSufixes_DoesntChangeWord_WhenSufixArrayIsEmpty() {
-        AlgorithmSettings settings = AlgorithmSettings.builder()
+        Settings settings = Settings.builder()
                 .suffixStopWords(asList("1", "2", "3"))
                 .build();
         String keyword = "1abc";
@@ -112,7 +112,7 @@ public class SearchVolumeCountAlgorithmTest {
     public void whenKeywordMatchesInAllIterations_andResultsAreFull_scoreIs100() {
         String keyword = "1abc1asd23";
         String sufixlessKeyword = "1abc1asd";
-        AlgorithmSettings settings = AlgorithmSettings.builder()
+        Settings settings = Settings.builder()
                 .suffixStopWords(asList("1", "2", "3"))
                 .maxResultSetSize(3)
                 .matchFinder((term) -> asList(sufixlessKeyword, term + "aaaaa", term + "bbbbb").stream().collect(toSet()))
@@ -130,7 +130,7 @@ public class SearchVolumeCountAlgorithmTest {
     @Test
     public void whenKeywordMatchesInHalfOfAllIterations_andResultsAreFull_scoreIs50() {
         String keyword = "a1b1";
-        AlgorithmSettings settings = AlgorithmSettings.builder()
+        Settings settings = Settings.builder()
                 .suffixStopWords(asList("1", "2", "3"))
                 .maxResultSetSize(3)
                 .matchFinder((term) -> asList(term, term + "aaaaa", term + "bbbbb").stream().collect(toSet()))
@@ -148,7 +148,7 @@ public class SearchVolumeCountAlgorithmTest {
     @Test
     public void whenKeywordMatchesInAllIterations_andResultsAreHalfEmptyFull_scoreIs50() {
         String keyword = "a1b1";
-        AlgorithmSettings settings = AlgorithmSettings.builder()
+        Settings settings = Settings.builder()
                 .suffixStopWords(asList("1", "2", "3"))
                 .maxResultSetSize(6)
                 .matchFinder((term) -> asList("a1b", term + "aaaaa", term + "bbbbb").stream().collect(toSet()))
@@ -167,7 +167,7 @@ public class SearchVolumeCountAlgorithmTest {
     @Test
     public void whenAmazonReturnsNoMatches_scoreIs0() {
         String keyword = "a1b1";
-        AlgorithmSettings settings = AlgorithmSettings.builder()
+        Settings settings = Settings.builder()
                 .suffixStopWords(asList("1", "2", "3"))
                 .maxResultSetSize(6)
                 .matchFinder((term) -> new HashSet<>())

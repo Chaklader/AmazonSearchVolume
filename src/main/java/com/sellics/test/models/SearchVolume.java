@@ -1,25 +1,24 @@
 package com.sellics.test.models;
-/*
- * @author aleksandartrposki@gmail.com
- * @since 14.07.19
- *
- *
- */
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.Accessors;
 
+/**
+ * @author Chaklader on 2020-02-07
+ */
 @Getter
 @Setter
 @Accessors(chain = true)
-public class Estimation {
+public class SearchVolume {
+
     private int score;
+
     @JsonProperty("Keyword")
     private String keyword;
 
-    public Estimation(int score, String keyword) {
+    public SearchVolume(int score, String keyword) {
         this.score = score;
         this.keyword = keyword;
     }

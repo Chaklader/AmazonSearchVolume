@@ -1,10 +1,5 @@
 package com.sellics.test.utils;
-/*
- * @author aleksandartrposki@gmail.com
- * @since 14.07.19
- *
- *
- */
+
 
 import com.fasterxml.jackson.databind.JsonNode;
 
@@ -12,15 +7,15 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * @author Chaklader on 2020-02-07
+ */
 public class AutocompleteResults {
+
 
     List<JsonNode> response;
     Set<String> results;
 
-    /**
-     * @param response, must be a json of the following srtucture: <a href="file:///../../../../../test/java/resources/sampleApiResponse.json">sampleApiResponse.json</a>
-     *                  The response must be a list, which contains a string on position zero, and a list of strings on position 1
-     */
     public AutocompleteResults(List<JsonNode> response) {
         this.response = response;
     }
@@ -30,6 +25,7 @@ public class AutocompleteResults {
     }
 
     public Set<String> getMatches() {
+
         if (results != null) {
             return results;
         }

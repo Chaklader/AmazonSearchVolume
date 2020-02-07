@@ -5,7 +5,6 @@ import lombok.Getter;
 import lombok.ToString;
 
 import java.util.Set;
-
 import static org.apache.commons.lang3.StringUtils.removeEnd;
 
 
@@ -23,7 +22,7 @@ public class SearchVolumeCountAlgorithm implements SearchVolumeIterator {
     public static final int PERCENT = 100;
 
     @Getter
-    private AlgorithmSettings settings;
+    private Settings settings;
 
     private String subPrefix;
     private String keyword;
@@ -32,7 +31,7 @@ public class SearchVolumeCountAlgorithm implements SearchVolumeIterator {
     private float score = 0;
     private int totalIterations = 0;
 
-    public SearchVolumeCountAlgorithm(AlgorithmSettings settings, String keyword) {
+    public SearchVolumeCountAlgorithm(Settings settings, String keyword) {
 
         this.keyword = keyword;
         this.settings = settings;

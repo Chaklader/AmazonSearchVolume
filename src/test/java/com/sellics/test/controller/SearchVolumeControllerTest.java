@@ -8,7 +8,7 @@ package com.sellics.test.controller;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.sellics.test.utils.AmazonAutocompleteApi;
+import com.sellics.test.utils.AutocompleteResultsInterface;
 import com.sellics.test.utils.AutocompleteResults;
 import com.sellics.test.calculation.SearchVolumeIterator;
 
@@ -36,7 +36,7 @@ public class SearchVolumeControllerTest {
         }
     };
 
-    public AmazonAutocompleteApi appleHeadphonesMockAutocompleteApi = (String searchTerm, String market, String department)->{
+    public AutocompleteResultsInterface appleHeadphonesMockAutocompleteApi = (String searchTerm, String market, String department)->{
         try {
             JsonNode[] jsonNodes = new ObjectMapper().readValue(SearchVolumeControllerTest.class.getResourceAsStream("/sampleApiResponse.json"), JsonNode[].class);
             return new AutocompleteResults(asList(jsonNodes));
@@ -56,7 +56,7 @@ public class SearchVolumeControllerTest {
 //        int expectedResult = 2;
 //        SearchVolumeIterator algorithm = getIterativeEstimatiorForFixedResultAndFIxedNumberOfIterations(expectedResult, 10000);
 //        SearchVolumeController searchVolumeController = new SearchVolumeController(arbitraryStopWords, MAX_MATCHES_PER_API_RESPONSE, allowedRunningTime, (settings, keyword) -> algorithm, appleHeadphonesMockAutocompleteApi, time);
-//        ResponseEntity<Estimation> estimate = searchVolumeController.estimate(ARBITRARY_KEYWORD, ARBITARY_MARKET, ARBITARY_DEPARTMENT);
+//        ResponseEntity<SearchVolume> estimate = searchVolumeController.estimate(ARBITRARY_KEYWORD, ARBITARY_MARKET, ARBITARY_DEPARTMENT);
 //        Assert.assertEquals(HttpStatus.GATEWAY_TIMEOUT,estimate.getStatusCode());
 //        Assert.assertEquals(expectedResult,estimate.getBody().getScore());
 //        Assert.assertEquals(ARBITRARY_KEYWORD,estimate.getBody().getKeyword());
@@ -75,7 +75,7 @@ public class SearchVolumeControllerTest {
 //        SearchVolumeIterator algorithm = getIterativeEstimatiorForFixedResultAndFIxedNumberOfIterations(estimatedResult, 10000);
 //        SearchVolumeController searchVolumeController = new SearchVolumeController(arbitraryStopWords, MAX_MATCHES_PER_API_RESPONSE, allowedRunningTime, (settings, keyword) -> algorithm, appleHeadphonesMockAutocompleteApi, time);
 //
-//        ResponseEntity<Estimation> estimate = searchVolumeController.estimate(ARBITRARY_KEYWORD, ARBITARY_MARKET, ARBITARY_DEPARTMENT);
+//        ResponseEntity<SearchVolume> estimate = searchVolumeController.estimate(ARBITRARY_KEYWORD, ARBITARY_MARKET, ARBITARY_DEPARTMENT);
 //
 //        Assert.assertEquals(HttpStatus.GATEWAY_TIMEOUT,estimate.getStatusCode());
 //        Assert.assertEquals(expectedResult,estimate.getBody().getScore());
@@ -90,7 +90,7 @@ public class SearchVolumeControllerTest {
 //        SearchVolumeIterator algorithm = getIterativeEstimatiorForFixedResultAndFIxedNumberOfIterations(expectedResult, 2);
 //        SearchVolumeController searchVolumeController = new SearchVolumeController(arbitraryStopWords, MAX_MATCHES_PER_API_RESPONSE, allowedRunningTime, (settings, keyword) -> algorithm, appleHeadphonesMockAutocompleteApi, time);
 //
-//        ResponseEntity<Estimation> estimate = searchVolumeController.estimate(ARBITRARY_KEYWORD, ARBITARY_MARKET, ARBITARY_DEPARTMENT);
+//        ResponseEntity<SearchVolume> estimate = searchVolumeController.estimate(ARBITRARY_KEYWORD, ARBITARY_MARKET, ARBITARY_DEPARTMENT);
 //
 //        Assert.assertEquals(HttpStatus.OK,estimate.getStatusCode());
 //        Assert.assertEquals(expectedResult,estimate.getBody().getScore());
